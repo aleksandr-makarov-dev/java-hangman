@@ -1,23 +1,23 @@
 import java.util.Objects;
 
 public class Letter {
-    private final String value;
+    private final char value;
 
-    public Letter(String value) {
+    public Letter(char value) {
         this.value = value;
     }
 
-    public static Letter of(String value){
+    public static Letter of(char value){
         return new Letter(value);
     }
 
-    public String getValue() {
+    public char getValue() {
         return value;
     }
 
     @Override
     public String toString() {
-        return value;
+        return String.valueOf(value);
     }
 
     @Override

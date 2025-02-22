@@ -1,6 +1,3 @@
-import javax.swing.plaf.PanelUI;
-import java.security.PublicKey;
-
 public class Constants {
     public static final String[] IMAGES = {
             """
@@ -88,7 +85,7 @@ public class Constants {
     public static final String FAILED_TO_LOAD_DICTIONARY_TEXT = "Не удалось начать игру: не удалось загрузить словарь.";
     public static final String FAILED_TO_FIND_FILE_TEXT = "Не удалось начать игру: файл не найден.";
     public static final String HINT_USED_TEXT = "Вы использовали подсказку.";
-    public static final String INVALID_LETTER_TEXT = "Это не действительная буква.";
+    public static final String INVALID_LETTER_TEXT = "Разрешены только буквы.";
     public static final String GUESS_WORD_TEXT = "Слово для отгадывания: ";
     public static final String INVALID_ATTEMPTS_TEXT = "Неправильные попытки [%d/%d]: ";
     public static final String INPUT_PROMPT_TEXT = "Следующая попытка (Введите '?' для подсказки [%d] или '!' для выхода): ";

@@ -2,7 +2,7 @@ public class MaskedLetter extends Letter {
 
     private boolean visible;
 
-    public MaskedLetter(String value) {
+    public MaskedLetter(char value) {
         super(value);
 
         visible = false;
@@ -19,6 +19,6 @@ public class MaskedLetter extends Letter {
 
     @Override
     public String toString() {
-        return visible ? this.getValue() : "_";
+        return visible ? String.valueOf(this.getValue()) : "_";
     }
 }

@@ -90,7 +90,7 @@ public class Game {
         attempts = 0;
 
         for (char ch : word.toCharArray()) {
-            maskedLetters.add(new MaskedLetter(String.valueOf(ch)));
+            maskedLetters.add(new MaskedLetter(ch));
         }
 
         state = GameState.PLAYING;
@@ -117,7 +117,7 @@ public class Game {
             return;
         }
 
-        LetterCheckResult result = updateLetters(Letter.of(letter));
+        LetterCheckResult result = updateLetters(Letter.of(letter.charAt(0)));
 
         switch (result) {
             case CORRECT -> System.out.println(Constants.CORRECT_LETTER_TEXT + letter);
@@ -174,7 +174,7 @@ public class Game {
     }
 
     private String getMaskedLettersAsString() {
-        return maskedLetters.stream().map(Letter::getValue).collect(Collectors.joining());
+        return maskedLetters.stream().map(v -> String.valueOf(v.getValue())).collect(Collectors.joining());
     }
 
     private String getUserInput(final String prompt) {
@@ -204,7 +204,7 @@ public class Game {
         LetterCheckResult result = LetterCheckResult.INCORRECT;
 
         for (MaskedLetter maskedLetter : maskedLetters) {
-            if (maskedLetter.getValue().equals(letter.getValue())) {
+            if (maskedLetter.getValue() == letter.getValue()) {
                 if (maskedLetter.getVisible()) {
                     return LetterCheckResult.ALREADY_USED;
                 }
